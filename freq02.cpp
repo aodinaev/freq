@@ -45,13 +45,8 @@ inline char letterize(uint8_t c) {
 }
 
 struct Trie {
-	std::array<Trie *, 'z' - 'a' + 1> trielets;
+	std::array<Trie *, 'z' - 'a' + 1> trielets = {};
 	uint32_t z = 0;
-
-	Trie() {
-		for (auto &x : trielets)
-			x = nullptr;
-	}
 
 	Trie *step(char c) {
 		auto idx = c - 'a';
